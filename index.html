@@ -9,13 +9,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
+  <!-- Add this inside your <style> tag or a CSS file -->
+  <style>
+    @keyframes spin-slow {
+      0% {
+        transform: rotate(0deg);
+      }
 
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-spin-slow {
+      animation: spin-slow 8s linear infinite;
+    }
+  </style>
 
 </head>
 
 <body class="bg-gray-100 text-gray-800 p-10 font-sans">
   <nav class="bg-white shadow-md p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <div class="max-w-7xl top-0 z-50 animate-fade-down mx-auto flex justify-between items-center">
       <!-- Left: Logo -->
       <div class="text-2xl font-bold text-pink-600 flex items-center gap-2">
         🌸 <span>Flower</span>
@@ -186,17 +201,19 @@
 
       <!-- Left: Image -->
       <div class="w-full md:w-1/2 relative">
-        <!-- Top-Right Overlay Image -->
+        <!-- Trusted Badge with Infinite Rotation -->
         <img src="./assets/trusted-badge.png" alt="Badge"
-          class="w-40 h-40 absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 z-10" />
+          class="w-40 h-40 absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 z-10 animate-spin-slow" />
 
-        <!-- Background/Main Image -->
-        <img src="./assets/flower-store.png" alt="Flower Store" class="w-full rounded-lg shadow-lg" />
+        <!-- Background/Main Image with AOS zoom-out -->
+        <img data-aos="zoom-out" src="./assets/flower-store.png" alt="Flower Store"
+          class="w-full rounded-lg shadow-lg" />
       </div>
 
 
+
       <!-- Right: Text + List -->
-      <div class="w-full md:w-1/2">
+      <div data-aos="zoom-in" class="w-full md:w-1/2">
         <h1 class="text-4xl font-bold mb-6">Flower & Plants Lover</h1>
         <ul class="list-disc list-inside space-y-4 text-gray-700 text-lg">
           <li>Indulge your senses with the beauty and fragrance of our fresh flower shop. From classic roses to exotic
@@ -221,7 +238,7 @@
     <!-- Left Column: 2 stacked small images -->
     <div class="flex flex-col gap-4">
       <!-- First Small Image -->
-      <div class="relative">
+      <div data-aos="slide-down" class="relative">
         <img src="./assets/deal-ana.png" alt="Deal Ana" class="w-full h-full object-cover rounded-lg" />
         <div
           class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 p-2 rounded shadow">
@@ -233,7 +250,7 @@
       </div>
 
       <!-- Second Small Image -->
-      <div class="relative">
+      <div data-aos="slide-up" class="relative">
         <img src="./assets/deal-bloom.png" alt="Deal Bloom" class="w-full h-full object-cover rounded-lg" />
         <div
           class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 p-2 rounded shadow">
@@ -246,7 +263,7 @@
     </div>
 
     <!-- Right Column: Large Image spans 2 columns -->
-    <div class="md:col-span-2 relative">
+    <div data-aos="slide-left" class="md:col-span-2 relative">
       <img src="./assets/deal-zabo.png" alt="Deal Zabo" class="w-full h-full object-cover rounded-lg" />
       <div
         class="absolute inset-0 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 text-white p-4 rounded">
@@ -258,7 +275,7 @@
     </div>
   </section>
   <section>
-    <div class="relative">
+    <div data-aos="flip-left" class="relative">
       <img src="./assets/news-letter-bg.png" alt="">
       <div class="max-w-md mx-auto absolute inset-0 flex flex-col items-center justify-center text-center ">
         <h1 class=" text-white text-4xl font-bold mb-4">Join the colorful Bunch</h1>
